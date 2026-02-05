@@ -7,15 +7,26 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <!-- Навбар -->
+    <nav class="nav">
+        <ul>
+        <li><a href="#home">Главная</a></li>
+        <li><a href="#about">Обо мне</a></li>
+        <li><a href="#goals">Мои цели</a></li>
+        <li><a href="#skills">Скиллы</a></li>
+        <li><a href="#contacts">Контакты</a></li>
+        </ul>
+    </nav>
+    <!-- Аватарка -->
     <div class="container">
-        <div class="card header">
+        <div class="card header" id="home">
             <img src="images/avatar.png" alt="Фото" class="avatar">
             <h1>Андрей</h1>
             <p>💻 Начинающий веб-разработчик</p>
         </div>
 
         <!-- Обо мне -->
-        <div class="card section">
+        <div class="card section" id="about">
             <h2>📖 Обо мне</h2>
             <p>
                 Привет! Мне 24 года, и я начинаю карьеру в веб-разработке с нуля. 
@@ -27,7 +38,7 @@
         </div>
 
         <!-- Мои цели -->
-        <div class="card section">
+        <div class="card section" id="goals">
             <h2>🎯 Мои цели</h2>
             <ul class="list">
                 <li>Освоить веб-разработку (HTML, CSS, JavaScript, React)</li>
@@ -50,21 +61,20 @@
                 <li>React Native — мобильная разработка</li>
             </ul>
         </div>
-            <div class="card section">
+        <!-- Шкала изучения навыков -->
+            <div class="card section" id="skills">
                 <h2> 🔑 Скилл</h2>
                 <ul class="list">
-
-            
     <li>HTML/CSS</li>
     <div style="background: #ee8f31; height: 8px; width: 65%; border-radius: 4px;"></div>
     <li>JavaScript</li>
-    <div style="background: #ee8f31; height: 8px; width: 1%; border-radius: 4px;"></div>
+    <div style="background: #ee8f31; height: 8px; width: 8%; border-radius: 4px;"></div>
     </ul>
 </div>
 <p></p>
 
         <!-- Контакты -->
-        <div class="card section">
+        <div class="card section" id="contacts">
             <h2>📱 Контакты</h2>
             <ul class="list">
                 <li>
