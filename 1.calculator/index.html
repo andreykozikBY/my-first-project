@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Калькулятор</title>
+  <style>
+    .calculator {
+      width: 300px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    h1{
+      margin: 0 auto;
+      text-align: center;
+      font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    #display {
+      width: 100%;
+      height: 50px;
+      font-size: 24px;
+      text-align: right;
+      padding: 10px;
+      margin-bottom: 10px;
+    }
+    .buttons {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 5px;
+    }
+    button {
+      height: 50px;
+      font-size: 18px;
+    }
+    button:hover {
+      transform: scale(1.05);
+      opacity: 0.9;
+      transition: all 0.2s ease;
+    }
+    button:nth-child(4n+1) { background: #f0f0f0; }
+    button:nth-child(4n+2) { background: #f0f0f0; }
+    button:nth-child(4n+3) { background: #f0f0f0; }
+    button:nth-child(4n) { background: #ff9800; color: white; }
+  </style>
+</head>
+<body>
+  <h1>Калькулятор</h1>
+  <div class="calculator">
+    <input type="text" id="display" disabled value="0">
+    <div class="buttons">
+    <button>7</button>
+    <button>8</button>
+    <button>9</button>
+    <button>C</button>
+    <button>4</button>
+    <button>5</button>
+    <button>6</button>
+    <button>+</button>
+    <button>1</button>
+    <button>2</button>
+    <button>3</button>
+    <button>-</button>
+    <button>.</button>
+    <button>0</button>
+    <button>=</button>
+    <button>*</button>
+    <button></button>
+    <button></button>
+    <button></button>
+    <button>/</button>
+    </div>
+  </div>
+  
+  <script>
+  const display = document.getElementById('display');
+let expression = '';
+
+document.querySelector('.buttons').addEventListener('click', function(e) {
+  if (e.target.tagName === 'BUTTON') {
+    const value = e.target.textContent;
+    
+    if (value === 'C') {
+      expression = '';
+      display.value = '0';
+      return;
+    }
+
+    if (value === '=') {
+      try {
+        const result = eval(expression);
+        display.value = result;
+        expression = result.toString();
+      } catch (error) {
+        display.value = 'Ошибка';
+        expression = '';
+      }
+      return;
+    }
+
+    expression += value;
+    display.value = expression;
+  }
+});
+  </script>
+</body>
+</html>

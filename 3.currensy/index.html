@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Конвентер Валют</title>
+    <style>
+        body{
+            background-color: rgb(117, 117, 117);
+        }
+    .display{
+      width: 300px;
+      margin: 0 auto;
+      text-align: center;
+      border-radius: 20px;
+}
+    select{
+       border-radius: 20px; 
+    }
+    div{
+      width: 300px;
+      margin: 0 auto;
+      text-align: center;
+      font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      border-radius: 10px;
+    }
+    h3{
+        width: 300px;
+      background-color: rgb(54, 108, 255);
+       margin: 0 auto;
+       text-align: center;
+      font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      border-radius: 20px;
+    }
+    button{
+        margin-top: 10px;
+        border-radius: 10px;
+        margin: 0 auto;
+      text-align: center; 
+    }
+#result{
+    background-color: white;
+
+}
+    </style>
+</head>
+<body>
+    <h3>Конвентер валют</h3>
+<div class="valut">
+  <input id="display" type="text">
+  <select id="from">
+<option value="USD">Доллар США</option>
+<option value="EUR">Евро</option>
+<option value="BYN">Белорусский рубль</option>        
+</select>
+<select id="to">
+<option value="USD">Доллар США</option>
+<option value="EUR">Евро</option>
+<option value="BYN">Белорусский рубль</option>        
+</select>
+<button id="konvert">Конвертировать</button>
+</div>
+<div id="result">Итого:</div>
+<script>
+      const rates = {
+  USD: { EUR: 0.92, BYN: 2.86 },
+  EUR: { USD: 1.18, BYN: 3.4 },
+  BYN: { USD: 0.35, EUR: 0.29 }
+      };
+    function getExchangeRates() {
+     return  new Promise((resolve) => {
+        setTimeout(() => {
+            resolve(rates);
+        },1000);
+        });
+    };
+document.getElementById('konvert').addEventListener('click', async function() {
+    const input = document.getElementById('display');
+    const value = Number(input.value);
+    const select = document.getElementById('from');
+    const fromValue = select.value;
+    const to = document.getElementById('to');
+    const toValue = to.value;
+    const resultCurrensy = document.getElementById('result');
+        const rates = await getExchangeRates()
+        const rate = rates[fromValue][toValue];
+        const result = value * rate;
+    resultCurrensy.textContent = `Итого: ${result.toFixed(2)}`;
+    });
+</script>
+</body>
+</html>

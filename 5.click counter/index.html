@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Счётчик</title>
+    <style>
+        body{
+            background-color: rgb(196, 196, 196);
+        }
+    .cont{
+      width: 300px;
+      margin: 0 auto;
+      text-align: center;
+}
+       div {
+      width: 100%;
+      border-radius: 10px;
+      margin: 0 auto;
+      text-align: center;
+      font-size: 50px;
+      font-style: bold;
+      font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+      margin-top: 10px;
+    }
+    h1{
+        width: 300px;
+        background-color: aquamarine;
+      margin: 0 auto;
+      text-align: center;
+      font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      border-radius: 20px;
+    }
+    button{
+        margin-top: 10px;
+        border-radius: 10px;
+        margin: 0 auto;
+      text-align: center; 
+    }
+
+    </style>
+</head>
+<body>
+    <h1> Счётчик кликов</h1>
+    <div id="cont"><div id="click">0</div>
+    <button id="plus">+1</button>
+    <button id="reset">Сбросить</button>
+</div>
+<script>
+    const savedNumber = localStorage.getItem('x'); // Читаем сохр данные
+    let x = 0;  // Добавляем счётчик
+    if (savedNumber) { // Проверка если сохр счётчик
+  x = JSON.parse(savedNumber);
+    }
+    const plusO = document.getElementById('plus'); // Получение кнопки +1
+    const resetO = document.getElementById('reset'); // Получение кнопки "Сбросить"
+    const display = document.getElementById('click'); // Получение отображение числа
+    display.textContent = x; // Вывод числа
+    document.getElementById('plus').addEventListener('click', function() { // Действие при нажатии на +1
+        x++;
+        display.textContent = x;
+        localStorage.setItem('x', JSON.stringify(x)); // Запись результата
+    }
+)
+document.getElementById('reset').addEventListener('click', function() {
+    x=0;
+    display.textContent = x;
+    localStorage.setItem('x', JSON.stringify(x)); // Удаление из записи при нажатии кнопки сбросаЫ
+}
+)
+</script>
+</body>
+</html>

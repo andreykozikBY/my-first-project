@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Игра "Угадай число"</title>
+  <style>
+  .guess {
+  width: 300px; 
+  margin: 0 auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  box-sizing: border-box;
+}
+
+#display {
+  width: 100%;
+  height: 60px;
+  font-size: 20px;
+  text-align: center;
+  border-radius: 10px;
+  border: 2px solid #ccc;
+  box-sizing: border-box;
+}
+
+#display:focus {
+  border-color: #05ff69;
+  box-shadow: 0 4px 8px rgba(105, 255, 187, 0.2);
+}
+
+.buttons {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+button {
+  width: 100%;
+  height: 40px;
+  font-size: 16px; 
+  padding: 0 10px;
+  border-radius: 10px;
+  border: 2px solid #b8b8b8;
+  cursor: pointer;
+  background-color: #f0f0f0;
+  box-sizing: border-box;
+}
+
+button:nth-child(1) { background-color: #4CAF50; color: white; }
+button:nth-child(2) { background-color: #2196F3; color: white; }
+button:nth-child(3) { background-color: #f44336; color: white; }
+
+button:hover {
+  transform: scale(1.05);
+  opacity: 0.9;
+  transition: all 0.2s ease;
+}
+
+.text {
+  margin: 0 auto;
+  margin-bottom: 10px;
+  width: 700px;
+  height: 70px;
+  border-radius: 10px;
+  background-color: #014780;
+  color: #ffffff;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  text-align: center;
+  padding-bottom: 10px;
+  padding-top: 5px;
+  font-size: 50px;
+  
+}
+
+#result {
+  width: 100%;
+  height: 50px;
+  text-align: center;
+  padding: 10px;
+  border-radius: 10px;
+  border: 2px solid #f3cdff;
+  margin-top: 10px;
+  font-size: 18px;
+  box-sizing: border-box;
+}
+
+#checkBtn { background-color: #4CAF50; }
+#newGameBtn { background-color: #2196F3; }
+#clearBtn { background-color: #ea2f2f; }
+  </style>
+</head>
+<body>
+     <h1 class="text">Угадай число от 1 до 100</h1> 
+     <div class="guess">
+    <input type="number" id="display">
+    <div class="buttons">
+   <button id="checkBtn">Проверить</button>
+   <button id="newGameBtn">Новая игра</button>
+   <button id="clearBtn">Очистить</button>
+    </div>
+    <div id="result">Результат:</div>
+  </div>
+  
+  <script>
+    let secretNumber = Math.floor(Math.random() * 100+1);
+  const input = document.getElementById('display'); // Получаем введеное число пользователем 
+const button = document.getElementById('checkBtn'); // Получаем кнопку проверки
+const result = document.getElementById('result'); // Получаем блок результата
+button.addEventListener('click', function(e) { // Обработка клика
+    const value = parseInt(input.value); // Переводим загаданную строку в число
+    if (value > secretNumber) {
+        result.textContent = "Результат: Меньше"
+        input.value = ""
+    } else if (value < secretNumber){
+        result.textContent = "Результат: Больше"
+        input.value = ""
+    } else
+    result.textContent = "Результат: Угадал!"
+    input.value = ""
+  }
+ 
+  )
+  document.getElementById('newGameBtn').addEventListener('click', function(){
+  secretNumber = Math.floor(Math.random() * 100+1)
+  input.value = ""
+  result.textContent = ""
+  }
+  )
+ document.getElementById('clearBtn').addEventListener('click', function(){
+  input.value = ""
+  }
+  )
+  </script>
+</body>
+</html>

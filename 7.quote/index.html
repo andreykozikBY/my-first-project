@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Рандомная цитата</title>
+  <style>
+ .text {
+  text-align: center;
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+#quote {
+  width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 2px solid #ccc;
+  border-radius: 10px;
+  min-height: 100px;
+  font-size: 18px;
+  text-align: center;
+}
+
+button {
+  display: block;
+  margin: 20px auto;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+  </style>
+</head>
+<body>
+ <h1 class="text">Цитата дня</h1>
+ <p1></p1>
+  <div id="quote">Цитата: </div>
+  <div>
+    <button id="newQuote">Новая цитата</button>
+  </div>
+  <script>
+    const quote = document.getElementById('quote');
+let quoteRandom = [
+    "Всё можно пережить. Даже если тебе кажется, что всё плохо. И оставаться стойким в такие моменты… Это и есть сила.",
+    "Молли, не пытайся развлечь меня беседой, это не твой конёк.",
+    "Книги заменяли маме мир, который она не повидала, но по которому порой тосковала.",
+    "Non ho una lira pero vorrei comprare il cielo per darlo a lei.ci devi dare un po' di fortuna e insieme al cielo compriamo anche la luna."
+];
+const choice = Math.floor(Math.random()*quoteRandom.length)
+quote.textContent = quoteRandom[choice];
+
+document.getElementById('newQuote').addEventListener('click', function(){
+  const choice = Math.floor(Math.random()*quoteRandom.length)
+  quote.textContent= quoteRandom[choice];
+  }
+  )
+  </script>
+</body>
+</html>

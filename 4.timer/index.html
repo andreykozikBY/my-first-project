@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ru-Ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Timer</title>
+</head>
+<body>
+<input id="display" type="number" placeholder="Секунды">
+<button id="start">Старт</button>
+<button id="reset">Сброс</button>
+<div id="result">Осталось: 0 сек</div>
+<script>
+let timerId = null;
+let seconds = 0;
+const result = document.getElementById('result');
+document.getElementById('start').addEventListener('click', async function() {
+    if (timerId) {
+        clearInterval(timerId)
+    }
+    const input = document.getElementById('display');
+    const value = Number(input.value);
+    if (isNaN(value) || value <= 0) {
+        alert('Введите положительное число')
+        return
+    }
+    seconds = value;
+    result.textContent = `Осталось ${seconds} сек`;
+    timerId = setInterval(()=> {
+        seconds--
+        if (seconds > 0) {
+            result.textContent = `Осталось ${seconds} сек`;
+        } else { 
+            clearInterval(timerId);
+            timerId = null;
+            result.textContent = `Время вышло!`;
+        }
+    }, 1000);
+});
+document.getElementById('reset').addEventListener('click', async function() {
+if (timerId) { 
+ clearInterval(timerId);
+ timerId= null;
+};
+seconds=0;
+result.textContent = `Осталось ${seconds} сек`;
+document.getElementById('display').value = '';
+});
+</script>
+</body>
+</html>
