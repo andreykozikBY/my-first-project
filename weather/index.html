@@ -110,6 +110,8 @@ document.getElementById('get').addEventListener('click', async function() {
   
   try {
     const url = 'API key';
+  // ⚠️ ВСТАВЬ СВОЙ КЛЮЧ ЗДЕСЬ (получи бесплатно: https://openweathermap.org/api)
+  // Пример: const url = 'ваш_ключ_здесь';
     const response = await fetch(url);
     const data = await response.json();
     resultWeather.textContent = `Температура: ${data.main.temp}°C, ${data.weather[0].description}`;

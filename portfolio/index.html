@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Андрей Козик - портфолио</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- Хедер -->
+  <header class="header">
+    <div class="container">
+      <h1>Андрей Козик</h1>
+      <p class="subtitle">Frontend Developer | Изучаю с нуля</p>
+      <nav class="nav">
+        <a href="#about">Обо мне</a>
+        <a href="#projects">Проекты</a>
+        <a href="#contacts">Контакты</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Обо мне -->
+<section id="about" class="about">
+  <div class="container">
+    <h2>Обо мне</h2>
+    <div class="about-content">
+      <img src="img/avatar.png" alt="Андрей Козик" class="avatar">
+      <div class="about-text">
+        <p>Привет! Я начинающий фронтенд-разработчик из Беларуси.</p>
+        <p>Изучаю веб-разработку с нуля и уже создал несколько проектов на HTML, CSS и JavaScript.</p>
+        <p>Мои навыки:</p>
+        <ul>
+          <li>HTML5 — семантическая верстка</li>
+          <li>CSS — флексбокс, адаптивность, анимации</li>
+          <li>JavaScript — массивы, объекты, работа с DOM, события, работа с API</li>
+          <li>Git, GitHub — базовое понимание</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+<!--Буш-->
+<section id="about-me" class="about-me">
+  <div class="container">
+    <h2>А ещё...</h2>
+    <div class="about-me-content">
+      <div class="about-me-text">
+        <p>У меня есть собака. Его зовут Буш.</p>
+        <p>Ему тоже очень интересно, как я учусь, но это не точно.</p>
+      </div>
+      <img src="img/bush.jpg" alt="Собака Буш" class="pet-avatar">
+    </div>
+  </div>
+</section>
+  <!-- Проекты -->
+<section id="projects" class="projects">
+  <div class="container"> 
+    <h2>Мои проекты</h2>
+<div class="projects-grid">
+  <!-- Карточка 1: Калькулятор -->
+  <div class="project-card">
+    <h3>Калькулятор</h3>
+    <p>Базовый калькулятор</p>
+    <ul>
+        <li>Содержит операции +,-,*,/</li>
+    </ul>
+    <div class="project-links">
+      <a href="../calculator/index.html" target="_blank" class="btn">Посмотреть</a>
+      <a href="https://github.com/andreykozikBY/my-first-project/blob/main/calculator/index.html" target="_blank" class="btn">Код</a>
+    </div>
+  </div>
+
+  <!-- Карточка 2: Список дел -->
+  <div class="project-card">
+    <h3>Список дел</h3>
+    <p>Приложение для управления задачами</p>
+    <ul>
+      <li>Добавление, удаление, сохранение в localStorage</li>
+      <li>Проверка выполненных задач</li>
+    </ul>
+    <div class="project-links">
+      <a href="../to-Do/index.html" target="_blank" class="btn">Посмотреть</a>
+      <a href="https://github.com/andreykozikBY/my-first-project/blob/main/to-Do/index.html" target="_blank" class="btn">Код</a>
+    </div>
+  </div>
+
+  <!-- Карточка 3: Конвертер валют -->
+  <div class="project-card">
+    <h3>Конвертер валют</h3>
+    <p>Конвертация USD/EUR/BYN</p>
+    <ul>
+      <li>Задержка симуляции запроса</li>
+    </ul>
+    <div class="project-links">
+      <a href="../currensy/index.html" target="_blank" class="btn">Посмотреть</a>
+      <a href="https://github.com/andreykozikBY/my-first-project/blob/main/currensy/index.html" target="_blank" class="btn">Код</a>
+    </div>
+  </div>
+
+  <!-- Карточка 4: Таймер -->
+  <div class="project-card">
+    <h3>Таймер обратного отсчёта</h3>
+    <p>Таймер с уведомлением по окончании</p>
+    <ul>
+      <li>Кнопки «Старт», «Сброс», ввод времени в секундах</li>
+    </ul>
+    <div class="project-links">
+      <a href="../timer/index.html" target="_blank" class="btn">Посмотреть</a>
+      <a href="https://github.com/andreykozikBY/my-first-project/blob/main/timer/index.html" target="_blank" class="btn">Код</a>
+    </div>
+  </div>
+
+  <!-- Карточка 5: Угадай число -->
+  <div class="project-card">
+    <h3>Игра: Угадай число</h3>
+    <p>Система загадывает число от 1 до 100</p>
+    <ul>
+      <li>Подсказки «больше» / «меньше» после каждой попытки</li>
+    </ul>
+    <div class="project-links">
+      <a href="../gues/index.html" target="_blank" class="btn">Посмотреть</a>
+      <a href="https://github.com/andreykozikBY/my-first-project/blob/main/gues/index.html" target="_blank" class="btn">Код</a>
+    </div>
+  </div>
+
+  <!-- Карточка 6: Погода -->
+  <div class="project-card">
+    <h3>Погода</h3>
+    <p>Отображение погоды для введённого города</p>
+    <ul>
+      <li>Работа с реальным API (OpenWeatherMap)</li>
+    </ul>
+    <div class="project-links">
+      <a href="../weather/index.html" target="_blank" class="btn">Посмотреть</a>
+      <a href="https://github.com/andreykozikBY/my-first-project/blob/main/weather/index.html" target="_blank" class="btn">Код</a>
+    </div>
+  </div>
+    <div class="project-card">
+    <h3>Первый лендинг</h3>
+    <p>IT Школа</p>
+    <ul>
+      <li>Отображает адаптивность, калькулятор тарфов, многостраничность</li>
+    </ul>
+    <div class="project-links">
+      <a href="https://andreykozikby.github.io/itSchool/?spm=a2ty_o01.29997173.0.0.521e5171CXehS1" target="_blank" class="btn">Посмотреть</a>
+      <a href="https://github.com/andreykozikBY/itSchool/blob/main/index.html" target="_blank" class="btn">Код</a>
+    </div>
+  </div>
+</div>
+  <!-- Контакты -->
+<section id="contacts" class="contacts">
+  <div class="container">
+    <h2>Контакты</h2>
+    <div class="contacts-content">
+      <p><strong>Email:</strong> andreykozik2001@gmail.com</p>
+      <p><strong>GitHub:</strong> <a href="https://github.com/andreykozikBY" target="_blank">github.com/andreykozikBY</a></p>
+      <p><strong>Telegram:</strong> @by_AKD</p>
+    </div>
+  </div>
+</section>
+  <script src="js/main.js"></script>
+</body>
+</html>
